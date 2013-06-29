@@ -1,0 +1,16 @@
+$LAB
+    .script("js/bootstrap/q1.js").wait()
+    .script("js/bootstrap/q2.js").wait()
+
+<%
+grunt.file.expand(["../others/**/*.js","../release/**/*.js"]).map(function (f) {
+    return f.replace("../", "js/");
+}).forEach(function (f) {
+        print('    .script(" ' + f + '")\n');
+    });
+
+%>
+    .script("app module")
+    .wait(function(){
+      angular.bootstrap("app",app[name]);
+    });

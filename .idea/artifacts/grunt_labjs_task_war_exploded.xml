@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="grunt-labjs-task:war exploded">
+    <output-path>$PROJECT_DIR$/target/grunt-labjs-task</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="grunt-labjs-task/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="grunt-labjs-task" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

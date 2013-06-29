@@ -1,0 +1,52 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>grunt-labjs-task</groupId>
+    <artifactId>grunt-labjs-task</artifactId>
+    <packaging>war</packaging>
+    <version>1.0</version>
+    <name>grunt-labjs-task Maven Webapp</name>
+    <url>http://maven.apache.org</url>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <finalName>grunt-labjs-task</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <warSourceExcludes>js/build/**,js/bootstrap/**,js/others/**</warSourceExcludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <executions>
+                    <execution>
+                        <phase>test-compile</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <executable>grunt</executable>
+                    <!-- optional -->
+                    <workingDirectory>src/main/webapp/js/build/</workingDirectory>
+                    <arguments>
+                        <argument>ci</argument>
+                    </arguments>
+                </configuration>
+            </plugin>
+        </plugins>
+
+    </build>
+</project>
