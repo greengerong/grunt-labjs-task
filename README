@@ -1,1 +1,1 @@
-This file was created by IntelliJ IDEA 12.1.3 for binding GitHub repository
+This project use grunt to manage client javascript(minify and combine ), also generate bootstrap script with labjs. It is also try to work with maven exec.
